@@ -1,0 +1,17 @@
+// IMPORTED PARTIALS //
+@import "./partials/fonts";
+@import "./partials/global";
+@import "./partials/mixins";
+@import "./partials/variables";
+
+// NAV //
+@import "./components/nav-bar";
+
+// // BANNER //
+@import "./components/banner";
+
+// CONTENT //
+@import "./components/content";
+
+// FOOTER //
+@import "./components/footer";

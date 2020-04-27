@@ -1,0 +1,14 @@
+.banner {
+  @include flex-align-center;
+  @include hero-height;
+  background-image: linear-gradient($black-50-opacity),
+    url(../../assets/images/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__title {
+    @include hero-text;
+    @include outer-margin;
+    @include hero-padding;
+    color: $white;
+  }
+}

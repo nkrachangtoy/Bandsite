@@ -1,0 +1,99 @@
+.about {
+  &__container {
+    @include outer-margin;
+    &--title {
+      @include header-text;
+      @include title-margin;
+    }
+  }
+  &__img {
+    width: 100%;
+    @include desktop {
+      padding: 0 5.75rem;
+    }
+    &--caption {
+      @include caption-text-mobile;
+      @include caption-margin;
+      @include tablet {
+        font-family: "Avenir-Demi";
+      }
+      @include desktop {
+        @include h2-text;
+        font-family: "Avenir-Demi";
+        padding: 0 5.75rem;
+      }
+    }
+    &--credit {
+      @include h2-subheader-text;
+      margin: 0;
+      @include desktop {
+        padding: 0 5.75rem;
+      }
+    }
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  @include outer-margin;
+  @include desktop {
+    padding: 0 5.75rem;
+  }
+  &__container {
+    &--paragraph {
+      @include h4-para-text;
+      @include tablet {
+        width: 93%;
+        text-align: left;
+      }
+    }
+  }
+  &__title {
+    @include outer-margin;
+    @include caption-text-mobile;
+    @include subtitle-margin;
+    @include desktop {
+      padding: 0 5.75rem;
+      @include h2-text;
+      font-family: "Avenir-Demi";
+    }
+  }
+  @include tablet {
+    flex-direction: row;
+    justify-content: center;
+  }
+  @include desktop {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.gallery {
+  background: $alabaster;
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    @include outer-margin;
+  }
+  &__title {
+    @include title-margin;
+    @include header-text;
+    width: 100%;
+    @include desktop {
+      margin-bottom: 4rem;
+    }
+  }
+  &__image {
+    width: 100%;
+    margin-bottom: 1rem;
+    @include tablet {
+      width: 31.25%;
+      margin-bottom: 1.5rem;
+    }
+    @include desktop {
+    }
+  }
+}
