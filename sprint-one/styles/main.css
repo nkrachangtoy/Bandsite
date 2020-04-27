@@ -1,21 +1,21 @@
 @font-face {
   font-family: "Avenir-Regular";
-  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf");
+  src: url("../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf");
 }
 
 @font-face {
   font-family: "Avenir-Light";
-  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Light.otf");
+  src: url("../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Light.otf");
 }
 
 @font-face {
   font-family: "Avenir-Bold";
-  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf");
+  src: url("../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf");
 }
 
 @font-face {
   font-family: "Avenir-Demi";
-  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf");
+  src: url("../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf");
 }
 
 *,
@@ -168,8 +168,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 11.438rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5))), url(../../assets/images/hero.jpg);
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5)), url(../../assets/images/hero.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5))), url(../assets/images/hero.jpg);
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5)), url(../assets/images/hero.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
