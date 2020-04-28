@@ -1,0 +1,237 @@
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+// FONT MIXINS //
+@mixin hero-text {
+  font-family: "Avenir-Bold";
+  font-size: $mobile-header-text;
+  line-height: $mobile-header-lh;
+  @include tablet {
+    font-size: $h1-hero-header;
+    line-height: $h1-hero-header-lh;
+  }
+  @include desktop {
+    font-size: $h1-hero-header;
+    line-height: $h1-hero-header-lh;
+  }
+}
+@mixin header-text {
+  font-family: "Avenir-Bold";
+  font-size: $mobile-header-text;
+  line-height: $mobile-header-lh;
+  @include tablet {
+    font-size: $h1-header;
+    line-height: $h1-header-lh;
+  }
+  @include desktop {
+    font-size: $h1-header;
+    line-height: $h1-header-lh;
+  }
+}
+@mixin h2-text {
+  font-family: "Avenir-Regular";
+  font-size: $mobile-header-text;
+  line-height: $mobile-header-lh;
+  @include tablet {
+    font-size: $h2-header;
+    line-height: $h2-header-lh;
+  }
+  @include desktop {
+    font-size: $h2-header;
+    line-height: $h2-header-lh;
+  }
+}
+@mixin h2-subheader-text {
+  font-family: "Avenir-Regular";
+  font-size: $mobile-sub-header-text;
+  line-height: $mobile-sub-header-lh;
+  @include tablet {
+    font-size: $h3-sub-header;
+    line-height: $h3-sub-header-lh;
+  }
+  @include desktop {
+    font-size: $h3-sub-header;
+    line-height: $h3-sub-header-lh;
+  }
+}
+@mixin h4-para-text {
+  font-family: "Avenir-Light";
+  font-size: $mobile-para;
+  line-height: $mobile-para-lh;
+  @include tablet {
+    font-size: $h4-para-comm;
+    line-height: $h4-para-comm-lh;
+  }
+  @include desktop {
+    font-size: $h4-para-comm;
+    line-height: $h4-para-comm-lh;
+  }
+}
+@mixin h4-list-text {
+  font-family: "Avenir-Regular";
+  font-size: $mobile-lists-cont;
+  line-height: $mobile-lists-cont-lh;
+  @include tablet {
+    font-size: $h4-lists-cont;
+    line-height: $h4-lists-cont-lh;
+  }
+  @include desktop {
+    font-size: $h4-lists-cont;
+    line-height: $h4-lists-cont-lh;
+  }
+}
+@mixin h5-text {
+  font-family: "Avenir-Regular";
+  font-size: $mobile-labels;
+  line-height: $mobile-labels-lh;
+  @include tablet {
+    font-size: $h5-labels;
+    line-height: $h5-labels-lh;
+  }
+  @include desktop {
+    font-size: $h5-labels;
+    line-height: $h5-labels-lh;
+  }
+}
+
+@mixin caption-text-mobile {
+  font-family: "Avenir-Demi";
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+// MARGIN //
+@mixin banner-margin {
+  margin: 0 1rem;
+  @include tablet {
+    margin: 0 2rem;
+  }
+  @include desktop {
+    margin: 11.25rem;
+  }
+}
+
+@mixin outer-margin {
+  margin: 0 1rem;
+  @include tablet {
+    margin: 0 1.5rem;
+  }
+  @include desktop {
+    margin: 0 11.25rem;
+  }
+}
+
+@mixin outer-padding {
+  padding: 0;
+  @include tablet {
+    padding: 0 1.5rem;
+  }
+  @include desktop {
+    padding: 0 4.25rem;
+  }
+}
+
+@mixin hero-padding {
+  padding-right: 4.875rem;
+  @include tablet {
+    padding-right: 11.5rem;
+  }
+  @include desktop {
+    padding-right: 31.5rem;
+  }
+}
+
+@mixin title-margin {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  @include tablet {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  @include desktop {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@mixin caption-margin {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  @include tablet {
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
+  @include desktop {
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@mixin subtitle-margin {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  @include tablet {
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+  }
+  @include desktop {
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+  }
+}
+@mixin footer-padding {
+  padding: 3rem 1rem 2rem 1rem;
+  @include tablet {
+    padding: 2rem 1.5rem 2rem 1.5rem;
+  }
+  @include desktop {
+    padding: 3rem 11.25rem 2rem 11.25rem;
+  }
+}
+
+// IMAGE HEIGHT //
+@mixin hero-height {
+  height: 11.438rem;
+  @include tablet {
+    height: 25rem;
+  }
+  @include desktop {
+    height: 41.875rem;
+  }
+}
+
+@mixin gallery-height {
+  height: 10.125rem;
+  @include tablet {
+    height: 7.875rem;
+  }
+  @include desktop {
+    height: 12.063rem;
+  }
+}
+
+// LINKS //
+@mixin links {
+  @include h4-list-text;
+  list-style: none;
+}
+
+// FLEXES //
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

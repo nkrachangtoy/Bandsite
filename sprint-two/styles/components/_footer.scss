@@ -1,0 +1,99 @@
+.site-footer {
+  background: $black;
+  @include footer-padding;
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  &__container {
+    @include tablet {
+      margin-right: 2.5rem;
+    }
+    @include desktop {
+      margin-right: 5rem;
+    }
+  }
+  &__title {
+    @include header-text;
+    color: $white;
+    margin: 0;
+    font-size: $h1-header;
+  }
+}
+
+.footer {
+  @include tablet {
+    width: 63.5%;
+    @include flex-align-center;
+    justify-content: space-between;
+  }
+  @include desktop {
+    width: 72%;
+  }
+  &__list {
+    @include links;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    &__item {
+      flex-grow: 1;
+      @include tablet {
+        flex-grow: 0;
+      }
+    }
+  }
+  &__link {
+    &--icon {
+      margin: 1rem;
+    }
+    &--logo {
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+}
+
+.footer-box {
+  width: 100%;
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include desktop {
+    width: 74.44%;
+  }
+  &__container {
+    color: $white;
+    margin-top: 1.5rem;
+  }
+  &__contact {
+    width: 100%;
+    color: $white;
+    margin-top: 1.5rem;
+    &--name {
+      @include h2-subheader-text;
+      margin: 0;
+    }
+    &--address {
+      @include h4-list-text;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    &--email {
+      @include h4-list-text;
+      margin: 0;
+    }
+    &--copyright {
+      color: $white;
+      @include h4-list-text;
+      margin-top: 2.5rem;
+      margin-bottom: 0;
+      display: block;
+      width: 100%;
+    }
+  }
+}

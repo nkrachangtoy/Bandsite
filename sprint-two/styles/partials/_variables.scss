@@ -1,0 +1,48 @@
+// MEDIA WIDTH //
+$tablet-width: 768px;
+$desktop-width: 1440px;
+$mobile-width: 320px;
+
+// COLOR //
+$black: #323232;
+$silver: #afafaf;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;
+$instock-blue: #004892;
+$instock-blue-dark: #002f5f;
+$brainflix-blue: #0095ff;
+$brainflix-blue-dark: #0065ad;
+$white: #ffffff;
+$black-50-opacity: rgba($black, 0.5);
+
+// DESK & TABLET TEXT //
+$h1-hero-header: 3.75rem;
+$h1-header: 2.25rem;
+$h2-header: 1.5rem;
+$h3-sub-header: 1rem;
+$h4-para-comm: 0.875rem;
+$h4-lists-cont: 0.875rem;
+$h5-labels: 0.75rem;
+
+// DESK & TABLET LINE HEIGHT //
+$h1-hero-header-lh: 4.25rem;
+$h1-header-lh: 2.75rem;
+$h2-header-lh: 2rem;
+$h3-sub-header-lh: 1.5rem;
+$h4-para-comm-lh: 1.375rem;
+$h4-lists-cont-lh: 1.25rem;
+$h5-labels-lh: 1.25rem;
+
+// MOBILE TEXT //
+$mobile-header-text: 1.5rem;
+$mobile-sub-header-text: 0.875rem;
+$mobile-para: 0.813rem;
+$mobile-lists-cont: 0.813rem;
+$mobile-labels: 0.75rem;
+
+// MOBILE LINE HEIGHT //
+$mobile-header-lh: 2rem;
+$mobile-sub-header-lh: 1.375rem;
+$mobile-para-lh: 1.125rem;
+$mobile-lists-cont-lh: 1.125rem;
+$mobile-labels-lh: 1.25rem;
