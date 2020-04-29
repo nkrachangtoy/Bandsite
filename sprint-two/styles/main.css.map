@@ -8,10 +8,10 @@
         "partials/_variables.scss",
         "partials/_mixins.scss",
         "partials/_variables.scss",
-        "components/_nav-bar.scss",
-        "components/_banner.scss",
-        "components/_content.scss",
-        "components/_footer.scss"
+        "partials/_nav-bar.scss",
+        "partials/_banner.scss",
+        "partials/_content.scss",
+        "partials/_footer.scss"
     ],
     "names": [],
     "file": "main.css"
