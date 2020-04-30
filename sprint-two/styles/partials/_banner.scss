@@ -18,3 +18,34 @@
     }
   }
 }
+
+.show-banner {
+  height: 472px;
+  width: 100%;
+  background-image: linear-gradient($black-50-opacity),
+    url(../assets/images/banner-2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__container {
+    @include outer-margin;
+    padding-top: 64px;
+  }
+  &__title {
+    @include header(36px, 55px);
+    margin-top: 16px;
+    margin-bottom: 64px;
+    color: $white;
+    @include tablet {
+      @include header(60px, 68px);
+    }
+    @include desktop {
+      @include header(60px, 68px);
+    }
+    &--subheader {
+      color: $white;
+      margin: 0;
+      @include text(14px, 32px);
+    }
+  }
+}

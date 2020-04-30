@@ -1,0 +1,47 @@
+.shows {
+  @extend .container;
+  padding: 32px 16px;
+  &__container {
+    margin: 0;
+  }
+  &__title {
+    @include header(24px, 32px);
+    color: $black;
+    margin: 0;
+  }
+  &__card {
+    padding-top: 40px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $mercury;
+    &--subheader {
+      color: $silver;
+      @include subheader(18px, 22px);
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    &--text {
+      @include text(16px, 18px);
+      margin-top: 0;
+      margin-bottom: 32px;
+    }
+    &--date {
+      @include subheader(18px, 22px);
+      color: $black;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+    &--btn {
+      width: 288px;
+      height: 48px;
+      background: $black;
+      border-radius: 4px;
+      @include subheader(14px, 22px);
+      color: $white;
+      opacity: 0.9;
+      text-align: center;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
