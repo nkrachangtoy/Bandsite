@@ -1,47 +1,94 @@
-.shows {
+.content {
   @extend .container;
-  padding: 32px 16px;
-  &__container {
-    margin: 0;
-  }
+  padding: 32px 16px 16px 16px;
   &__title {
     @include header(24px, 32px);
     color: $black;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 40px;
+    display: block;
   }
-  &__card {
-    padding-top: 40px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid $mercury;
+}
 
-    &--subheader {
-      color: $silver;
-      @include subheader(18px, 22px);
-      margin-top: 0;
-      margin-bottom: 16px;
+.shows-list {
+  @extend .container;
+  padding: 0;
+  list-style: none;
+  &__item {
+    border-bottom: 1px solid $mercury;
+    padding-bottom: 16px;
+  }
+
+  &__date-wrapeper,
+  &__venue-wrapper,
+  &__location-wrapper {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -24px;
     }
-    &--text {
-      @include text(16px, 18px);
-      margin-top: 0;
-      margin-bottom: 32px;
+  }
+  &__date-wrapper::before {
+    content: "DATE";
+  }
+  &__venue-wrapper::before {
+    content: "VENUE";
+  }
+  &__location-wrapper::before {
+    content: "LOCATION";
+  }
+
+  &__date,
+  &__venue,
+  &__location {
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  &__btn {
+    width: 160px;
+    height: 48px;
+    background: $black;
+    color: $white;
+    border-radius: 4px;
+    opacity: 0.9;
+    @include subheader(14px, 22px);
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      opacity: 1;
     }
-    &--date {
-      @include subheader(18px, 22px);
-      color: $black;
-      margin-top: 0;
-      margin-bottom: 24px;
-    }
-    &--btn {
-      width: 288px;
-      height: 48px;
-      background: $black;
-      border-radius: 4px;
-      @include subheader(14px, 22px);
-      color: $white;
-      opacity: 0.9;
-      text-align: center;
-      &:hover {
-        opacity: 1;
+  }
+  @include tablet {
+    .shows-list {
+      &__item {
+        display: flex;
+        align-items: baseline;
+        &:first-child {
+          margin-top: 32px;
+          .shows-list__date-wrapper::before,
+          .shows-list__venue-wrapper::before,
+          .shows-list__location-wrapper::before {
+            display: block;
+            top: -40px;
+          }
+        }
+      }
+      &__date-wrapper,
+      &__venue-wrapper,
+      &__location-wrapper {
+        width: 25%;
+      }
+      &__date-wrapper::before,
+      &__venue-wrapper::before,
+      &__location-wrapper::before {
+        display: none;
+      }
+      &__date,
+      &__venue,
+      &__location {
+        margin: 0;
       }
     }
   }
