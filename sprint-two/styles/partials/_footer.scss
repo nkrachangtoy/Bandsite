@@ -15,10 +15,15 @@
     }
   }
   &__title {
-    @include header-text;
+    @include header(36px, 44px);
     color: $white;
     margin: 0;
-    font-size: $h1-header;
+    @include tablet {
+      @include header(36px, 44px);
+    }
+    @include desktop {
+      @include header(36px, 44px);
+    }
   }
 }
 
@@ -75,25 +80,49 @@
     color: $white;
     margin-top: 1.5rem;
     &--name {
-      @include h2-subheader-text;
+      @include subheader(14px, 22px);
       margin: 0;
+      @include tablet {
+        @include header(16px, 24px);
+      }
+      @include desktop {
+        @include header(16px, 24px);
+      }
     }
     &--address {
-      @include h4-list-text;
+      @include text(13px, 18px);
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
+      @include tablet {
+        @include text(14px, 20px);
+      }
+      @include desktop {
+        @include text(14px, 20px);
+      }
     }
     &--email {
-      @include h4-list-text;
+      @include text(13px, 18px);
       margin: 0;
+      @include tablet {
+        @include text(14px, 20px);
+      }
+      @include desktop {
+        @include text(14px, 20px);
+      }
     }
     &--copyright {
       color: $white;
-      @include h4-list-text;
+      @include text(13px, 18px);
       margin-top: 2.5rem;
       margin-bottom: 0;
       display: block;
       width: 100%;
+      @include tablet {
+        @include text(14px, 20px);
+      }
+      @include desktop {
+        @include text(14px, 20px);
+      }
     }
   }
 }

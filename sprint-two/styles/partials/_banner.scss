@@ -6,9 +6,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   &__title {
-    @include hero-text;
+    @include header(24px, 32px);
     @include outer-margin;
     @include hero-padding;
     color: $white;
+    @include tablet {
+      @include header(60px, 68px);
+    }
+    @include desktop {
+      @include header(60px, 68px);
+    }
   }
 }

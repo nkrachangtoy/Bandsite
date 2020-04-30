@@ -43,8 +43,13 @@
     color: $silver;
     display: block;
     padding: 0.625rem;
+    @include subheader(14px, 22px);
     @include tablet {
       padding: 1.8rem 1.25rem;
+      @include subheader(16px, 24px);
+    }
+    @include desktop {
+      @include subheader(16px, 24px);
     }
     &:hover,
     &--active {
