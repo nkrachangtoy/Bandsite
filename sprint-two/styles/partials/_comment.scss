@@ -1,0 +1,79 @@
+.comment {
+  @extend .container;
+  @include outer-margin;
+
+  &__title {
+    @include header(24px, 32px);
+    @include title-margin;
+    color: $black;
+    @include tablet {
+      @include header(36px, 44px);
+    }
+    @include desktop {
+      @include header(36px, 44px);
+    }
+  }
+}
+
+.comment-form {
+  @extend .container;
+  &__container {
+    @include comment-padding;
+  }
+  &__name {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    position: relative;
+    padding: 16px 16px;
+    @include comment-box;
+    &::before {
+      position: absolute;
+      content: "NAME";
+      top: -16px;
+    }
+  }
+  &__comment {
+    @include comment-box;
+    margin-top: 16px;
+    padding: 16px 16px;
+  }
+  &__btn {
+    @include comment-box;
+    background: $black;
+    color: $white;
+    @include text(14px, 22px);
+    padding: 13px 36.789px;
+    margin-top: 16px;
+  }
+}
+
+.comment-list {
+  list-style: none;
+  padding: 0;
+  &__item {
+    border-top: 1px solid $mercury;
+    border-bottom: 1px solid $mercury;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 24px 0;
+    &--name {
+      @include subheader(14px, 22px);
+      margin: 0;
+    }
+    &--date {
+      @include text(14px, 22px);
+      color: $silver;
+      margin: 0;
+      margin-left: auto;
+      @include tablet {
+        margin-left: 1rem;
+      }
+    }
+    &--comment {
+      margin: 0;
+      margin-top: 1rem;
+      @include text(14px, 18px);
+    }
+  }
+}
