@@ -1,12 +1,13 @@
 .content {
   @extend .container;
-  padding: 32px 16px 16px 16px;
+  padding: 32px 0;
+  @include outer-margin;
   &__title {
     @include header(24px, 32px);
     color: $black;
     margin-top: 0;
     margin-bottom: 40px;
-    display: block;
+    display: inline-block;
   }
 }
 
@@ -16,46 +17,55 @@
   list-style: none;
   &__item {
     border-bottom: 1px solid $mercury;
-    padding-bottom: 16px;
+    padding: 16px 0;
   }
 
-  &__date-wrapeper,
+  &__date-wrapper,
   &__venue-wrapper,
   &__location-wrapper {
     position: relative;
     &::before {
       content: "";
       position: absolute;
-      top: -24px;
+      bottom: 24px;
     }
   }
   &__date-wrapper::before {
     content: "DATE";
+    @include subheader(14px, 22px);
+    color: $silver;
   }
   &__venue-wrapper::before {
     content: "VENUE";
+    @include subheader(14px, 22px);
+    color: $silver;
   }
   &__location-wrapper::before {
     content: "LOCATION";
+    @include subheader(14px, 22px);
+    color: $silver;
   }
 
-  &__date,
+  &__date {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    @include subheader(14px, 18px);
+  }
   &__venue,
   &__location {
     margin-top: 16px;
     margin-bottom: 24px;
+    @include text(14px, 18px);
   }
 
   &__btn {
-    width: 160px;
-    height: 48px;
+    padding: 13px 36.789px;
     background: $black;
     color: $white;
     border-radius: 4px;
     opacity: 0.9;
     @include subheader(14px, 22px);
     text-align: center;
-    text-decoration: none;
     &:hover {
       opacity: 1;
     }
@@ -65,13 +75,13 @@
       &__item {
         display: flex;
         align-items: baseline;
+        justify-content: space-evenly;
         &:first-child {
-          margin-top: 32px;
           .shows-list__date-wrapper::before,
           .shows-list__venue-wrapper::before,
           .shows-list__location-wrapper::before {
             display: block;
-            top: -40px;
+            margin-bottom: 40px;
           }
         }
       }

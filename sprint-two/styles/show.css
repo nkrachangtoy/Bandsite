@@ -293,7 +293,20 @@ body {
 }
 
 .content {
-  padding: 32px 16px 16px 16px;
+  padding: 32px 0;
+  margin: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .content {
+    margin: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content {
+    margin: 0 11.25rem;
+  }
 }
 
 .content__title {
@@ -303,7 +316,7 @@ body {
   color: #323232;
   margin-top: 0;
   margin-bottom: 40px;
-  display: block;
+  display: inline-block;
 }
 
 .shows-list {
@@ -313,39 +326,61 @@ body {
 
 .shows-list__item {
   border-bottom: 1px solid #e1e1e1;
-  padding-bottom: 16px;
+  padding: 16px 0;
 }
 
-.shows-list__date-wrapeper, .shows-list__venue-wrapper, .shows-list__location-wrapper {
+.shows-list__date-wrapper, .shows-list__venue-wrapper, .shows-list__location-wrapper {
   position: relative;
 }
 
-.shows-list__date-wrapeper::before, .shows-list__venue-wrapper::before, .shows-list__location-wrapper::before {
+.shows-list__date-wrapper::before, .shows-list__venue-wrapper::before, .shows-list__location-wrapper::before {
   content: "";
   position: absolute;
-  top: -24px;
+  bottom: 24px;
 }
 
 .shows-list__date-wrapper::before {
   content: "DATE";
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+  color: #afafaf;
 }
 
 .shows-list__venue-wrapper::before {
   content: "VENUE";
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+  color: #afafaf;
 }
 
 .shows-list__location-wrapper::before {
   content: "LOCATION";
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 22px;
+  color: #afafaf;
 }
 
-.shows-list__date, .shows-list__venue, .shows-list__location {
+.shows-list__date {
   margin-top: 16px;
   margin-bottom: 24px;
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.shows-list__venue, .shows-list__location {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .shows-list__btn {
-  width: 160px;
-  height: 48px;
+  padding: 13px 36.789px;
   background: #323232;
   color: #ffffff;
   border-radius: 4px;
@@ -354,7 +389,6 @@ body {
   font-size: 14px;
   line-height: 22px;
   text-align: center;
-  text-decoration: none;
 }
 
 .shows-list__btn:hover {
@@ -369,15 +403,15 @@ body {
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
-  }
-  .shows-list .shows-list__item:first-child {
-    margin-top: 32px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   .shows-list .shows-list__item:first-child .shows-list__date-wrapper::before,
   .shows-list .shows-list__item:first-child .shows-list__venue-wrapper::before,
   .shows-list .shows-list__item:first-child .shows-list__location-wrapper::before {
     display: block;
-    top: -40px;
+    margin-bottom: 40px;
   }
   .shows-list .shows-list__date-wrapper, .shows-list .shows-list__venue-wrapper, .shows-list .shows-list__location-wrapper {
     width: 25%;
