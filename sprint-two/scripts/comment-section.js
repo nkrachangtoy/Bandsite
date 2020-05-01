@@ -25,18 +25,3 @@ var defaultComments = [
       "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He's definitely my favorite ever!",
   },
 ];
-
-// Generate a table in Chrome console //
-console.table(defaultComments);
-
-var commentSection = document.querySelector(".comment");
-
-// Function Declaration //
-function generateComments(defaultComments) {
-  var commentContainerElem = document.createElement("div");
-  commentContainerElem.classList.add("comment__container");
-  var commentHeader = document.createElement("h1");
-  commentHeader.innerHTML = "Join the Conversation";
-}
-
-generateComments(defaultComments);

@@ -116,6 +116,15 @@
   }
 }
 
+@mixin comment-padding {
+  @include tablet {
+    padding: 3.5rem 6.25rem;
+  }
+  @include desktop {
+    padding: 3.5rem 17.25rem;
+  }
+}
+
 // IMAGE HEIGHT //
 @mixin hero-height {
   height: 11.438rem;
@@ -152,4 +161,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// COMMENT BOX //
+@mixin comment-box {
+  border-radius: 4px;
+  border-style: 1px solid $mercury;
 }
