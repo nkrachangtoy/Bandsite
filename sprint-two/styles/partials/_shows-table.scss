@@ -14,9 +14,8 @@
   }
   &__title {
     @include header(24px, 32px);
+    @include top-bottom-margin(0, 40px);
     color: $black;
-    margin-top: 0;
-    margin-bottom: 24px;
     @include tablet {
       @include header(36px, 44px);
       width: 25.56%;
@@ -33,7 +32,8 @@
   }
   &__item {
     border-bottom: 1px solid $mercury;
-    @include top-bottom-padding(16px, 16px) margin-bottom: 40px;
+    @include top-bottom-padding(16px, 16px);
+    margin-bottom: 40px;
     @include tablet {
       margin-bottom: 0;
     }
@@ -50,18 +50,18 @@
     }
   }
   &__date-wrapper::before {
-    content: "DATE";
-    @include subheader(14px, 22px);
+    content: "DATES";
+    @include text(12px, 20px);
     color: $silver;
   }
   &__venue-wrapper::before {
     content: "VENUE";
-    @include subheader(14px, 22px);
+    @include text(12px, 20px);
     color: $silver;
   }
   &__location-wrapper::before {
     content: "LOCATION";
-    @include subheader(14px, 22px);
+    @include text(12px, 20px);
     color: $silver;
   }
 
