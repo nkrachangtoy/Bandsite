@@ -79,10 +79,10 @@
   }
 
   &__btn {
-    @include comment-box;
+    @include comment-btn;
+    @include text(14px, 18px);
     background: $black;
     color: $white;
-    @include text(14px, 18px);
     padding: 13px 0;
     width: 100%;
     opacity: 0.9;

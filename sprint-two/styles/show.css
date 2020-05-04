@@ -495,11 +495,11 @@ body {
   border-radius: 4px;
   border-style: 2px solid transparent;
   outline: none;
-  background: #323232;
-  color: #ffffff;
   font-family: "Avenir-Regular";
   font-size: 14px;
   line-height: 18px;
+  background: #323232;
+  color: #ffffff;
   padding: 13px 0;
   width: 100%;
   opacity: 0.9;

@@ -1,5 +1,6 @@
 .comment {
   @extend .container;
+  @include comment-padding;
   @include outer-margin;
   @include top-bottom-padding(32px, 40px);
   @include tablet {
@@ -11,27 +12,23 @@
   &__title {
     @include header(24px, 32px);
     color: $black;
-    margin: 0;
+    @include top-bottom-margin(0, 40px);
     @include tablet {
       @include header(36px, 44px);
-    }
-    @include desktop {
-      @include header(36px, 44px);
+      @include top-bottom-margin(0, 56px);
     }
   }
 }
 
 .comment-form {
-  @extend .container;
   display: flex;
   flex-direction: column;
-  @include top-bottom-margin(40px, 32px);
+  @include top-bottom-margin(0, 32px);
   &__container {
-    @include comment-padding;
+    @extend .container;
   }
   &__circle {
     @include circle;
-    position: relative;
     overflow: hidden;
     &--picture {
       width: 100%;
@@ -40,27 +37,35 @@
     }
   }
   &__title {
-    @include top-bottom-margin(24px, 8px);
+    @include top-bottom-margin(0, 8px);
     @include text(14px, 22px);
     color: $silver;
+    margin-left: 68px;
   }
   &__name {
+    @include comment-box;
     padding: 1rem;
     @include text(14px, 18px);
-    @include comment-box;
-    background: $alabaster;
+    margin-bottom: 24px;
+    &--wrapper {
+      display: flex;
+    }
+    &--icon {
+      @include circle;
+      margin-right: 20px;
+    }
     &:focus {
       background: $white;
       border: 2px solid $black;
     }
   }
   &__comment {
-    height: 96px;
-    padding: 16px 16px;
-    @include text(14px, 18px);
     @include comment-box;
-    background: $alabaster;
-    color: $black;
+    @include text(14px, 18px);
+    padding: 16px 16px;
+    margin-left: 68px;
+    margin-bottom: 24px;
+    height: 96px;
     resize: none;
     &:focus {
       background: $white;
@@ -68,15 +73,16 @@
     }
   }
   &__btn {
-    @include comment-box;
+    @include comment-btn;
     background: $black;
     color: $white;
     @include text(14px, 22px);
     padding: 13px 36.789px;
     margin-top: 16px;
-    width: 100%;
+    width: 224px;
     opacity: 0.9;
     border: 1px solid $black;
+    margin-left: auto;
     cursor: pointer;
     &:hover {
       opacity: 1;
