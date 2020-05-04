@@ -1,13 +1,26 @@
 .content {
   @extend .container;
-  padding: 32px 0;
+  @include top-bottom-padding(32px, 32px);
   @include outer-margin;
+  @include desktop {
+    @include top-bottom-padding(48px, 48px);
+  }
+  &__container {
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
   &__title {
     @include header(24px, 32px);
     color: $black;
     margin-top: 0;
-    margin-bottom: 40px;
-    display: inline-block;
+    margin-bottom: 24px;
+    @include tablet {
+      @include header(36px, 44px);
+      width: 25.56%;
+    }
   }
 }
 
@@ -15,9 +28,15 @@
   @extend .container;
   padding: 0;
   list-style: none;
+  @include desktop {
+    width: 74.44%;
+  }
   &__item {
     border-bottom: 1px solid $mercury;
-    padding: 16px 0;
+    @include top-bottom-padding(16px, 16px) margin-bottom: 40px;
+    @include tablet {
+      margin-bottom: 0;
+    }
   }
 
   &__date-wrapper,
@@ -27,7 +46,7 @@
     &::before {
       content: "";
       position: absolute;
-      bottom: 24px;
+      top: -32px;
     }
   }
   &__date-wrapper::before {
@@ -47,27 +66,33 @@
   }
 
   &__date {
-    margin-top: 16px;
-    margin-bottom: 24px;
+    @include top-bottom-margin(0, 48px);
     @include subheader(14px, 18px);
   }
-  &__venue,
+  &__venue {
+    @include top-bottom-margin(0, 48px);
+    @include text(14px, 18px);
+  }
   &__location {
-    margin-top: 16px;
-    margin-bottom: 24px;
+    @include top-bottom-margin(0, 32px);
     @include text(14px, 18px);
   }
 
   &__btn {
-    padding: 13px 36.789px;
+    @include comment-box;
     background: $black;
     color: $white;
-    border-radius: 4px;
+    @include text(14px, 18px);
+    padding: 13px 0;
+    width: 100%;
     opacity: 0.9;
-    @include subheader(14px, 22px);
-    text-align: center;
+    border: 1px solid $black;
+    cursor: pointer;
     &:hover {
       opacity: 1;
+    }
+    @include tablet {
+      width: 160px;
     }
   }
   @include tablet {
@@ -81,7 +106,6 @@
           .shows-list__venue-wrapper::before,
           .shows-list__location-wrapper::before {
             display: block;
-            margin-bottom: 40px;
           }
         }
       }

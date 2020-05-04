@@ -29,6 +29,8 @@
   &__container {
     @include outer-margin;
     padding-top: 64px;
+    display: flex;
+    flex-wrap: wrap;
   }
   &__title {
     @include header(36px, 55px);
