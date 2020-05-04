@@ -118,11 +118,21 @@
 
 @mixin comment-padding {
   @include tablet {
-    padding: 3.5rem 6.25rem;
+    padding: 3.5rem 6.25rem 0 6.25rem;
   }
   @include desktop {
-    padding: 3.5rem 17.25rem;
+    padding: 3.5rem 17.25rem 0 17.25rem;
   }
+}
+
+@mixin top-bottom-padding($padding-top, $padding-bottom) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+}
+
+@mixin top-bottom-margin($margin-top, $margin-bottom) {
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
 }
 
 // IMAGE HEIGHT //
@@ -166,5 +176,13 @@
 // COMMENT BOX //
 @mixin comment-box {
   border-radius: 4px;
-  border-style: 1px solid $mercury;
+  border-style: 2px solid transparent;
+  outline: none;
+}
+
+@mixin circle {
+  border-radius: 50%;
+  background: $silver;
+  height: 48px;
+  width: 48px;
 }

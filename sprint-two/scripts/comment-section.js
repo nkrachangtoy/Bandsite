@@ -22,6 +22,7 @@ var comments = [
 // Existing DOM elements //
 const commentForm = document.querySelector(".comment-form"); // html form
 const commentList = document.querySelector(".comment-list"); // html <ul>
+
 //event listener for the message form, call createComment function
 commentForm.addEventListener("submit", createComment);
 /**

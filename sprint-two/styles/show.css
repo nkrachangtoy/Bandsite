@@ -130,6 +130,7 @@ body {
   color: #afafaf;
   display: block;
   padding: 0.625rem;
+  border-bottom: 3px solid transparent;
   font-family: "Avenir-Demi";
   font-size: 14px;
   line-height: 22px;

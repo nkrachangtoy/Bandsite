@@ -130,6 +130,7 @@ body {
   color: #afafaf;
   display: block;
   padding: 0.625rem;
+  border-bottom: 3px solid transparent;
   font-family: "Avenir-Demi";
   font-size: 14px;
   line-height: 22px;
@@ -640,6 +641,8 @@ body {
 
 .comment {
   margin: 0 1rem;
+  padding-top: 32px;
+  padding-bottom: 40px;
 }
 
 @media (min-width: 768px) {
@@ -654,27 +657,26 @@ body {
   }
 }
 
+@media (min-width: 768px) {
+  .comment {
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .comment {
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+}
+
 .comment__title {
   font-family: "Avenir-Bold";
   font-size: 24px;
   line-height: 32px;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
   color: #323232;
-}
-
-@media (min-width: 768px) {
-  .comment__title {
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .comment__title {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
+  margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -693,19 +695,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  .comment-form__container {
-    padding: 3.5rem 6.25rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .comment-form__container {
-    padding: 3.5rem 17.25rem;
-  }
-}
-
-.comment-form__name {
+.comment-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -713,29 +703,86 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 16px;
-  position: relative;
-  padding: 16px 16px;
-  border-radius: 4px;
-  border-style: 1px solid #e1e1e1;
+  margin-top: 40px;
+  margin-bottom: 32px;
 }
 
-.comment-form__name::before {
-  position: absolute;
-  content: "NAME";
-  top: -16px;
+@media (min-width: 768px) {
+  .comment-form__container {
+    padding: 3.5rem 6.25rem 0 6.25rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .comment-form__container {
+    padding: 3.5rem 17.25rem 0 17.25rem;
+  }
+}
+
+.comment-form__circle {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.comment-form__circle--picture {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.comment-form__title {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 22px;
+  color: #afafaf;
+}
+
+.comment-form__name {
+  padding: 1rem;
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  outline: none;
+  background: #fafafa;
+}
+
+.comment-form__name:focus {
+  background: #ffffff;
+  border: 2px solid #323232;
 }
 
 .comment-form__comment {
-  border-radius: 4px;
-  border-style: 1px solid #e1e1e1;
-  margin-top: 16px;
+  height: 96px;
   padding: 16px 16px;
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  outline: none;
+  background: #fafafa;
+  color: #323232;
+  resize: none;
+}
+
+.comment-form__comment:focus {
+  background: #ffffff;
+  border: 2px solid #323232;
 }
 
 .comment-form__btn {
   border-radius: 4px;
-  border-style: 1px solid #e1e1e1;
+  border-style: 2px solid transparent;
+  outline: none;
   background: #323232;
   color: #ffffff;
   font-family: "Avenir-Regular";
@@ -743,22 +790,46 @@ body {
   line-height: 22px;
   padding: 13px 36.789px;
   margin-top: 16px;
+  width: 100%;
+  opacity: 0.9;
+  border: 1px solid #323232;
+  cursor: pointer;
+}
+
+.comment-form__btn:hover {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .comment-form__btn {
+    width: 160px;
+    margin-left: auto;
+  }
 }
 
 .comment-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .comment-list__item {
-  border-top: 1px solid #e1e1e1;
-  border-bottom: 1px solid #e1e1e1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
   padding: 24px 0;
+}
+
+.comment-list__item--profile {
+  border-radius: 50%;
+  background: #afafaf;
+  height: 48px;
+  width: 48px;
+  margin-right: 20px;
 }
 
 .comment-list__item--name {
@@ -784,8 +855,9 @@ body {
 }
 
 .comment-list__item--comment {
+  width: 100%;
   margin: 0;
-  margin-top: 1rem;
+  margin-left: 4.25rem;
   font-family: "Avenir-Regular";
   font-size: 14px;
   line-height: 18px;

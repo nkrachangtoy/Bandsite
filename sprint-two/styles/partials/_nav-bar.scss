@@ -43,6 +43,7 @@
     color: $silver;
     display: block;
     padding: 0.625rem;
+    border-bottom: 3px solid transparent;
     @include subheader(14px, 22px);
     @include tablet {
       padding: 1.8rem 1.25rem;
