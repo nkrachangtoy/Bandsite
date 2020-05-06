@@ -128,9 +128,9 @@ function formattedDate(date) {
     "11",
     "12",
   ];
-  const formattedDate = `${monthsInNum[date.getMonth()]}/${
-    daysInNum[date.getDay()]
-  }/${date.getFullYear()}`;
+  const formattedDate = `${
+    monthsInNum[date.getMonth()]
+  }/${date.getDate()}/${date.getFullYear()}`;
 
   return formattedDate;
 }

@@ -24,8 +24,8 @@
   display: flex;
   flex-direction: column;
   @include top-bottom-margin(0, 32px);
+  @extend .container;
   &__container {
-    @extend .container;
   }
   &__circle {
     @include circle;
