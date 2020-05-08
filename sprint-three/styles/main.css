@@ -992,13 +992,14 @@ body {
 }
 
 .comment-form__name {
-  width: 100%;
+  max-width: 100%;
   height: 48px;
   border-style: 1px solid transparent;
   border-radius: 4px;
   background: #fafafa;
   outline: none;
   color: #323232;
+  width: 100%;
   padding: 1rem;
   font-family: "Avenir-Regular";
   font-size: 14px;
@@ -1026,7 +1027,7 @@ body {
 }
 
 .comment-form__comment {
-  width: 100%;
+  max-width: 100%;
   height: 48px;
   border-style: 1px solid transparent;
   border-radius: 4px;

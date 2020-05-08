@@ -44,6 +44,7 @@
   }
   &__name {
     @include comment-box;
+    width: 100%;
     padding: 1rem;
     @include text(14px, 18px);
     margin-bottom: 24px;
