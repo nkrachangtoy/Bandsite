@@ -38,7 +38,7 @@ body {
   min-height: 100vh;
 }
 
-.container, .comment, .comment-form {
+.container, .content, .shows-list, .comment, .comment-form {
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -350,6 +350,198 @@ body {
 @media (min-width: 1440px) {
   .show-banner__audio-player {
     margin-left: 64px;
+  }
+}
+
+.content {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .content {
+    margin: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content {
+    margin: 0 11.25rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.content__title {
+  font-family: "Avenir-Bold";
+  font-size: 24px;
+  line-height: 32px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  color: #323232;
+}
+
+@media (min-width: 768px) {
+  .content__title {
+    font-family: "Avenir-Bold";
+    font-size: 36px;
+    line-height: 44px;
+    width: 25.56%;
+  }
+}
+
+.shows-list {
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 1440px) {
+  .shows-list {
+    width: 74.44%;
+  }
+}
+
+.shows-list__item {
+  border-bottom: 1px solid #e1e1e1;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .shows-list__item {
+    margin-bottom: 0;
+  }
+}
+
+.shows-list__date-wrapper, .shows-list__venue-wrapper, .shows-list__location-wrapper {
+  position: relative;
+}
+
+.shows-list__date-wrapper::before, .shows-list__venue-wrapper::before, .shows-list__location-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -32px;
+}
+
+.shows-list__date-wrapper::before {
+  content: "DATES";
+  font-family: "Avenir-Regular";
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+}
+
+.shows-list__venue-wrapper::before {
+  content: "VENUE";
+  font-family: "Avenir-Regular";
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+}
+
+.shows-list__location-wrapper::before {
+  content: "LOCATION";
+  font-family: "Avenir-Regular";
+  font-size: 12px;
+  line-height: 20px;
+  color: #afafaf;
+}
+
+.shows-list__date {
+  margin-top: 0;
+  margin-bottom: 48px;
+  font-family: "Avenir-Demi";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.shows-list__venue {
+  margin-top: 0;
+  margin-bottom: 48px;
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.shows-list__location {
+  margin-top: 0;
+  margin-bottom: 32px;
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.shows-list__btn {
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  outline: none;
+  font-family: "Avenir-Regular";
+  font-size: 14px;
+  line-height: 18px;
+  background: #323232;
+  color: #ffffff;
+  padding: 13px 0;
+  width: 100%;
+  opacity: 0.9;
+  border: 1px solid #323232;
+  cursor: pointer;
+}
+
+.shows-list__btn:hover {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .shows-list__btn {
+    width: 160px;
+  }
+}
+
+@media (min-width: 768px) {
+  .shows-list .shows-list__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .shows-list .shows-list__item:first-child .shows-list__date-wrapper::before,
+  .shows-list .shows-list__item:first-child .shows-list__venue-wrapper::before,
+  .shows-list .shows-list__item:first-child .shows-list__location-wrapper::before {
+    display: block;
+  }
+  .shows-list .shows-list__date-wrapper, .shows-list .shows-list__venue-wrapper, .shows-list .shows-list__location-wrapper {
+    width: 25%;
+  }
+  .shows-list .shows-list__date-wrapper::before, .shows-list .shows-list__venue-wrapper::before, .shows-list .shows-list__location-wrapper::before {
+    display: none;
+  }
+  .shows-list .shows-list__date, .shows-list .shows-list__venue, .shows-list .shows-list__location {
+    margin: 0;
   }
 }
 
