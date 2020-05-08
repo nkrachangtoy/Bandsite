@@ -25,8 +25,6 @@
   flex-direction: column;
   @include top-bottom-margin(0, 32px);
   @extend .container;
-  &__container {
-  }
   &__circle {
     @include circle;
     overflow: hidden;
