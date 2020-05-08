@@ -1,0 +1,129 @@
+.content {
+  @extend .container;
+  @include top-bottom-padding(32px, 32px);
+  @include outer-margin;
+  @include desktop {
+    @include top-bottom-padding(48px, 48px);
+  }
+  &__container {
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
+  &__title {
+    @include header(24px, 32px);
+    @include top-bottom-margin(0, 40px);
+    color: $black;
+    @include tablet {
+      @include header(36px, 44px);
+      width: 25.56%;
+    }
+  }
+}
+
+.shows-list {
+  @extend .container;
+  padding: 0;
+  list-style: none;
+  @include desktop {
+    width: 74.44%;
+  }
+  &__item {
+    border-bottom: 1px solid $mercury;
+    @include top-bottom-padding(16px, 16px);
+    margin-bottom: 40px;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__date-wrapper,
+  &__venue-wrapper,
+  &__location-wrapper {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -32px;
+    }
+  }
+  &__date-wrapper::before {
+    content: "DATES";
+    @include text(12px, 20px);
+    color: $silver;
+  }
+  &__venue-wrapper::before {
+    content: "VENUE";
+    @include text(12px, 20px);
+    color: $silver;
+  }
+  &__location-wrapper::before {
+    content: "LOCATION";
+    @include text(12px, 20px);
+    color: $silver;
+  }
+
+  &__date {
+    @include top-bottom-margin(0, 48px);
+    @include subheader(14px, 18px);
+  }
+  &__venue {
+    @include top-bottom-margin(0, 48px);
+    @include text(14px, 18px);
+  }
+  &__location {
+    @include top-bottom-margin(0, 32px);
+    @include text(14px, 18px);
+  }
+
+  &__btn {
+    @include comment-btn;
+    @include text(14px, 18px);
+    background: $black;
+    color: $white;
+    padding: 13px 0;
+    width: 100%;
+    opacity: 0.9;
+    border: 1px solid $black;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    @include tablet {
+      width: 160px;
+    }
+  }
+  @include tablet {
+    .shows-list {
+      &__item {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-evenly;
+        &:first-child {
+          .shows-list__date-wrapper::before,
+          .shows-list__venue-wrapper::before,
+          .shows-list__location-wrapper::before {
+            display: block;
+          }
+        }
+      }
+      &__date-wrapper,
+      &__venue-wrapper,
+      &__location-wrapper {
+        width: 25%;
+      }
+      &__date-wrapper::before,
+      &__venue-wrapper::before,
+      &__location-wrapper::before {
+        display: none;
+      }
+      &__date,
+      &__venue,
+      &__location {
+        margin: 0;
+      }
+    }
+  }
+}

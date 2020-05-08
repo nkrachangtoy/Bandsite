@@ -1,0 +1,198 @@
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+// FONT MIXINS //
+
+@mixin header($font-size, $line-height) {
+  font-family: "Avenir-Bold";
+  font-size: $font-size;
+  line-height: $line-height;
+}
+@mixin subheader($font-size, $line-height) {
+  font-family: "Avenir-Demi";
+  font-size: $font-size;
+  line-height: $line-height;
+}
+@mixin text($font-size, $line-height) {
+  font-family: "Avenir-Regular";
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+// MARGIN //
+@mixin banner-margin {
+  margin: 0 1rem;
+  @include tablet {
+    margin: 0 2rem;
+  }
+  @include desktop {
+    margin: 11.25rem;
+  }
+}
+
+@mixin outer-margin {
+  margin: 0 1rem;
+  @include tablet {
+    margin: 0 1.5rem;
+  }
+  @include desktop {
+    margin: 0 11.25rem;
+  }
+}
+
+@mixin outer-padding {
+  padding: 0;
+  @include tablet {
+    padding: 0 1.5rem;
+  }
+  @include desktop {
+    padding: 0 4.25rem;
+  }
+}
+
+@mixin hero-padding {
+  padding-right: 4.875rem;
+  @include tablet {
+    padding-right: 11.5rem;
+  }
+  @include desktop {
+    padding-right: 31.5rem;
+  }
+}
+
+@mixin title-margin {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  @include tablet {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  @include desktop {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@mixin caption-margin {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  @include tablet {
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
+  @include desktop {
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@mixin subtitle-margin {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  @include tablet {
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+  }
+  @include desktop {
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+  }
+}
+@mixin footer-padding {
+  padding: 3rem 1rem 2rem 1rem;
+  @include tablet {
+    padding: 2rem 1.5rem 2rem 1.5rem;
+  }
+  @include desktop {
+    padding: 3rem 11.25rem 2rem 11.25rem;
+  }
+}
+
+@mixin comment-padding {
+  @include tablet {
+    padding: 3.5rem 6.25rem 0 6.25rem;
+  }
+  @include desktop {
+    padding: 3.5rem 17.25rem 0 17.25rem;
+  }
+}
+
+@mixin top-bottom-padding($padding-top, $padding-bottom) {
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+}
+
+@mixin top-bottom-margin($margin-top, $margin-bottom) {
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+}
+
+// IMAGE HEIGHT //
+@mixin hero-height {
+  height: 11.438rem;
+  @include tablet {
+    height: 25rem;
+  }
+  @include desktop {
+    height: 41.875rem;
+  }
+}
+
+@mixin gallery-height {
+  height: 10.125rem;
+  @include tablet {
+    height: 7.875rem;
+  }
+  @include desktop {
+    height: 12.063rem;
+  }
+}
+
+// LINKS //
+@mixin links {
+  list-style: none;
+}
+
+// FLEXES //
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// COMMENT BOX //
+@mixin comment-box {
+  // max-width: 100%;
+  width: 100%;
+  height: 48px;
+  border-style: 1px solid transparent;
+  border-radius: 4px;
+  background: $alabaster;
+  outline: none;
+  color: $black;
+}
+@mixin comment-btn {
+  border-radius: 4px;
+  border-style: 2px solid transparent;
+  outline: none;
+}
+
+@mixin circle {
+  border-radius: 50%;
+  background: $silver;
+  height: 48px;
+  width: 48px;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show</title>
+    <link rel="stylesheet" type="text/css" href="../styles/show.css" />
+  </head>
+  <body>
+    <!-- Navigation starts here -->
+    <header class="site-header">
+      <div class="site-header__container">
+        <a href="index.html" class="site-header__logo">
+          <img
+            src="../assets/logos/bandsite-logo-new.svg"
+            alt="Band Site Logo"
+          />
+        </a>
+      </div>
+      <nav class="nav-bar">
+        <ul class="nav-bar__list">
+          <li class="nav-bar__item">
+            <a href="../index.html" class="nav-bar__link">Biography</a>
+          </li>
+          <li class="nav-bar__item">
+            <a href="#URL" class="nav-bar__link nav-bar__link--active">Shows</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Navigation ends here -->
+
+    <!-- Site Banner starts here -->
+    <section class="show-banner">
+      <div class="show-banner__container">
+        <h3 class="show-banner__title--subheader">Woman Worldwide Album</h3>
+        <div class="show-banner__wrapper">
+          <h1 class="show-banner__title">
+            Waters of Nazareth x We Are your Friends x Phantom
+          </h1>
+          <iframe
+            class="show-banner__audio-player"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/470225721&color=%231f5393&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content starts here -->
+    <main class="content">
+      <div class="content__container">
+        <h1 class="content__title">Shows</h1>
+        <ul class="shows-list">
+          <!-- content will be appended here through Javascript -->
+        </ul>
+      </div>
+    </main>
+    <!-- Content ends here -->
+
+    <!-- Footer starts here -->
+    <footer class="site-footer">
+      <div class="site-footer__container">
+        <h1 class="site-footer__title">
+          Get In Touch
+        </h1>
+      </div>
+      <nav class="footer">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="#instagram" class="footer__link">
+              <img
+                src="../assets/icons/SVG/Icon-instagram.svg"
+                alt="Instagram"
+                class="footer__link--icon"
+              />
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#facebook" class="footer__link">
+              <img
+                src="../assets/icons/SVG/Icon-facebook.svg"
+                alt="Facebook"
+                class="footer__link--icon"
+              />
+            </a>
+          </li>
+          <li class="footer__item">
+            <a href="#twitter" class="footer__link">
+              <img
+                src="../assets/icons/SVG/Icon-twitter.svg"
+                alt="Twitter"
+                class="footer__link--icon"
+              />
+            </a>
+          </li>
+        </ul>
+        <a href="index.html" class="footer__link">
+          <img
+            class="footer__link--logo"
+            src="../assets/logos/bandsite-logo-new.svg"
+            alt="Band Site Logo"
+          />
+        </a>
+      </nav>
+      <section class="footer-box">
+        <article class="footer-box__container">
+          <h3 class="footer-box__contact--name">
+            Richard Rover
+            <br />
+            The Bees Knees Management
+          </h3>
+          <h4 class="footer-box__contact--address">
+            460 King Street West
+            <br />
+            Toronto, Ontario M5V 1L7
+          </h4>
+          <h4 class="footer-box__contact--email">
+            info@thebeesknees.com
+          </h4>
+        </article>
+        <article class="footer-box__container">
+          <h3 class="footer-box__contact--name">
+            Marsha Vlasic
+            <br />
+            Artist Group International
+          </h3>
+          <h4 class="footer-box__contact--address">
+            Booking Agent for
+            <br />
+            US / South America / Japan
+          </h4>
+          <h4 class="footer-box__contact--email">
+            marsha.vlasic@artistgrp.com
+          </h4>
+        </article>
+        <article class="footer-box__container">
+          <h3 class="footer-box__contact--name">
+            Russel Warby
+            <br />
+            William Morrir Entertainment
+          </h3>
+          <h4 class="footer-box__contact--address">
+            Booking Agent for
+            <br />
+            UK / EU / AU
+          </h4>
+          <h4 class="footer-box__contact--email">
+            RLW@wmeentertainment.com
+          </h4>
+        </article>
+      </section>
+      <h4 class="footer-box__contact--copyright">
+        Copyright The Bees Knees © 2018 All Rights Reserved
+      </h4>
+    </footer>
+    <script src="../scripts/buildShowsPage.js"></script>
+  </body>
+</html>

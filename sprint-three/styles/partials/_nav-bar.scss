@@ -1,0 +1,61 @@
+.site-header {
+  background: $black;
+  @include tablet {
+    @include flex-align-center;
+    padding: 0 1.5rem;
+  }
+  @include desktop {
+    padding: 0 11.25rem;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  &__logo {
+    @include flex-center;
+    margin: 0.625rem 0;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+.nav-bar {
+  width: 100%;
+  text-align: center;
+  &__list {
+    @include flex-align-center;
+    @include links;
+    margin: 0;
+    padding: 0;
+    @include tablet {
+      margin: 0 3.5rem;
+    }
+  }
+  &__item {
+    flex-grow: 1;
+    @include tablet {
+      flex-grow: 0;
+    }
+  }
+
+  &__link {
+    color: $silver;
+    display: block;
+    padding: 0.625rem;
+    border-bottom: 3px solid transparent;
+    @include subheader(14px, 22px);
+    @include tablet {
+      padding: 1.8rem 1.25rem;
+      @include subheader(16px, 24px);
+    }
+    @include desktop {
+      @include subheader(16px, 24px);
+    }
+    &:hover,
+    &--active {
+      color: $white;
+      border-bottom: 3px solid $white;
+    }
+  }
+}
