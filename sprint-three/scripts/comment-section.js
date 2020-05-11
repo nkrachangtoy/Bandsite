@@ -19,16 +19,19 @@
 //       "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He's definitely my favorite ever!",
 //   },
 // ];
+// Existing DOM elements //
+const commentForm = document.querySelector(".comment-form"); // html form
+const commentList = document.querySelector(".comment-list"); // html <ul>
 
 // VARIABLES //
 const url = "https://project-1-api.herokuapp.com";
-const commentAPI = "comments?api_key=f83633f1-2214-4f06-abaf-f2e6da580294";
+const commentAPI = "/comments?api_key=f83633f1-2214-4f06-abaf-f2e6da580294";
 
 /**
- * GET METHOD WITH AXIOD & API
+ * Get comment from the api
  */
 axios
-  .get(`${url}/${commentAPI}`)
+  .get(`${url}${commentAPI}`)
   .then((resp) => {
     // Handle success
     const data = resp.data;
@@ -39,25 +42,53 @@ axios
   });
 
 /**
- * POST METHOD WITH AXIOD & API
+ * Post comment to the api
  */
-axios
-  .post(`${url}/${commentAPI}`, {
-    name: JSON.stringify(nameVal),
-    comment: JSON.stringify(messageVal),
-  })
-  .then((resp) => {
-    // Handle success
-    const data = resp.data;
+
+/**
+ * Can't figure out the post comment function
+ */
+
+/**
+ *  Create a new comment <li> with name, date, and message, appends to commentList <ul>
+ */
+function createComment(event) {
+  event.preventDefault();
+  var nameVal = event.target.name.value;
+  var dateVal = new Date();
+  var commentVal = event.target.comment.value;
+  var newComment = {
+    name: nameVal,
+    comment: commentVal,
+  };
+  // if (nameVal !== "" && commentVal !== "") {
+  //   event.push({
+  //     name: nameVal,
+  //     date: dateVal,
+  //     comment: commentVal,
+  //   });
+  //   commentForm.reset();
+  //   listComments(dateSortArray());
+  // } else {
+  //   alert("Please add a name and message");
+  // }
+}
+
+axios({
+  method: "post",
+  url: `${url}${commentAPI}`,
+  data: createComment(newComment),
+  headers: {
+    "Content-Type": "application/json; charset=UTF-8",
+  },
+})
+  .then((response) => {
+    const data = response.data;
     createComment(data);
   })
   .catch((error) => {
     console.log(error);
   });
-
-// Existing DOM elements //
-const commentForm = document.querySelector(".comment-form"); // html form
-const commentList = document.querySelector(".comment-list"); // html <ul>
 
 //event listener for the message form, call createComment function
 commentForm.addEventListener("submit", createComment);
@@ -92,61 +123,20 @@ function listComments(comments) {
   }
 }
 
-/**
- *  Create a new comment <li> with name, date, and message, appends to commentList <ul>
- */
-function createComment(event) {
-  event.preventDefault();
-  var nameVal = event.target.name.value;
-  var dateVal = new Date();
-  var messageVal = event.target.comment.value;
-  if (nameVal !== "" && messageVal !== "") {
-    comments.push({
-      name: nameVal,
-      date: dateVal,
-      comment: messageVal,
-    });
-    commentForm.reset();
-    listComments(dateSortArray(comments));
-  } else {
-    alert("Please add a name and message");
-  }
-}
-
 function dateSortArray(arr) {
   // using .slice makes a copy of the array, which keeps from sorting the original array
   var sortedArray = arr.slice().sort((a, b) => b.timestamp - a.timestamp);
   return sortedArray;
 }
 
-// function formattedDate(date) {
-//   const monthsInNum = [
-//     "01",
-//     "02",
-//     "03",
-//     "04",
-//     "05",
-//     "06",
-//     "07",
-//     "08",
-//     "09",
-//     "10",
-//     "11",
-//     "12",
-//   ];
-//   const formattedDate = `${
-//     monthsInNum[date.getMonth()]
-//   }/${date.getDate()}/${date.getFullYear()}`;
-
-//   return formattedDate;
-// }
-
 /**
  * function created a timestamp
  */
 function timeSince(date) {
+  // math.floor is used here to return largest integer
   var seconds = Math.floor((new Date() - date) / 1000);
   var interval = Math.floor(seconds / 31536000);
+  // if statement to calculate the years, months, days, hours, minutes, and seconds.
   if (interval > 1) {
     return interval + " years";
   }
@@ -167,8 +157,4 @@ function timeSince(date) {
     return interval + " minutes";
   }
   return Math.floor(seconds) + " seconds";
-
-  var aDay = 24 * 60 * 60 * 1000;
-  console.log(timeSince(new Date(Date.now() - aDay)));
-  console.log(timeSince(new Date(Date.now() - aDay * 2)));
 }
