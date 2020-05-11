@@ -39,11 +39,19 @@ const showDatesAPI = "showdates?api_key=f83633f1-2214-4f06-abaf-f2e6da580294";
 const showsList = document.querySelector(".shows-list"); // html <ul>
 
 // AXIOS GET SHOW DATES
-axios.get(`${url}/${showDatesAPI}`).then((resp) => {
-  // Handle success
-  const data = resp.data;
-  console.log(data);
-});
+axios
+  .get(`${url}/${showDatesAPI}`)
+  .then((resp) => {
+    // Handle success
+    const data = resp.data;
+    listShows(data); // call the listShows function
+    // console.log(data);
+  })
+  .catch((error) => {
+    // Handle error
+    console.log(error);
+  });
+
 /**
  * Loop through an array of show lists and create <li> that's appended to the <ul class="shows-list">
  */
@@ -64,7 +72,7 @@ function listShows(showArray) {
     venueWrapper.classList.add("shows-list__venue-wrapper"); // create a wrapper for venue
     var venueEl = document.createElement("p");
     venueEl.classList.add("shows-list__venue"); // add class="shows-list__date" to <p>
-    venueEl.innerHTML = showArray[i].venue;
+    venueEl.innerHTML = showArray[i].place;
 
     var locationWrapper = document.createElement("div");
     locationWrapper.classList.add("shows-list__location-wrapper"); // create a wrapper for location
@@ -90,5 +98,3 @@ function listShows(showArray) {
     showsList.appendChild(showsLi); // finally append <li> to <ul>
   }
 }
-
-listShows(shows); // call the listShows function
