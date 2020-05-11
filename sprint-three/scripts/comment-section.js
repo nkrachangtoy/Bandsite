@@ -45,53 +45,26 @@ axios
  * Post comment to the api
  */
 
-/**
- * Can't figure out the post comment function
- */
-
-/**
- *  Create a new comment <li> with name, date, and message, appends to commentList <ul>
- */
-function createComment(event) {
+//event listener for the message form, call createComment function
+commentForm.addEventListener("submit", (event) => {
   event.preventDefault();
   var nameVal = event.target.name.value;
-  var dateVal = new Date();
   var commentVal = event.target.comment.value;
   var newComment = {
     name: nameVal,
     comment: commentVal,
   };
-  // if (nameVal !== "" && commentVal !== "") {
-  //   event.push({
-  //     name: nameVal,
-  //     date: dateVal,
-  //     comment: commentVal,
-  //   });
-  //   commentForm.reset();
-  //   listComments(dateSortArray());
-  // } else {
-  //   alert("Please add a name and message");
-  // }
-}
-
-axios({
-  method: "post",
-  url: `${url}${commentAPI}`,
-  data: createComment(newComment),
-  headers: {
-    "Content-Type": "application/json; charset=UTF-8",
-  },
-})
-  .then((response) => {
-    const data = response.data;
-    createComment(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-
-//event listener for the message form, call createComment function
-commentForm.addEventListener("submit", createComment);
+  axios
+    .post(`${url}${commentAPI}`, newComment)
+    .then((resp) => {
+      const userComment = resp.data;
+      listComments(dateSortedArray(userComment));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  event.target.reset();
+});
 
 /**
  * Loop through an array of comments and create an <li> that's appended to the <ul class="comment-list">
