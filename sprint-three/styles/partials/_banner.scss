@@ -3,8 +3,11 @@
   @include hero-height;
   background-image: linear-gradient($black-50-opacity),
     url(../assets/images/hero.jpg);
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
+  &__container {
+  }
   &__title {
     @include header(24px, 32px);
     @include outer-margin;

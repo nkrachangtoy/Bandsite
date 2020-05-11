@@ -168,6 +168,7 @@ body {
   height: 11.438rem;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(50, 50, 50, 0.5))), url(../assets/images/hero.jpg);
   background-image: linear-gradient(rgba(50, 50, 50, 0.5)), url(../assets/images/hero.jpg);
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
 }

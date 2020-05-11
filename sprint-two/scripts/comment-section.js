@@ -19,6 +19,7 @@ var comments = [
       "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He's definitely my favorite ever!",
   },
 ];
+
 // Existing DOM elements //
 const commentForm = document.querySelector(".comment-form"); // html form
 const commentList = document.querySelector(".comment-list"); // html <ul>
