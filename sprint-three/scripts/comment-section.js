@@ -30,17 +30,20 @@ const commentAPI = "/comments?api_key=f83633f1-2214-4f06-abaf-f2e6da580294";
 /**
  * Get comment from the api
  */
-axios
-  .get(`${url}${commentAPI}`)
-  .then((resp) => {
-    // Handle success
-    const data = resp.data;
-    listComments(dateSortArray(data));
-  })
-  .catch((error) => {
-    console.log(error);
-  });
 
+function loadComments() {
+  axios
+    .get(`${url}${commentAPI}`)
+    .then((resp) => {
+      // Handle success
+      const data = resp.data;
+      listComments(dateSortArray(data));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+loadComments();
 /**
  * Post comment to the api
  */
@@ -58,13 +61,20 @@ commentForm.addEventListener("submit", (event) => {
     .post(`${url}${commentAPI}`, newComment)
     .then((resp) => {
       const userComment = resp.data;
-      listComments(dateSortedArray(userComment));
+      // listComments(dateSortedArray(userComment));
+      loadComments();
     })
     .catch((error) => {
       console.log(error);
     });
   event.target.reset();
 });
+
+/**
+ * Delete button
+ * Delete comment from axios
+ */
+// THIS FEATURE WILL BE ADDED
 
 /**
  * Loop through an array of comments and create an <li> that's appended to the <ul class="comment-list">
@@ -106,6 +116,9 @@ function dateSortArray(arr) {
  * function created a timestamp
  */
 function timeSince(date) {
+  const d = new Date(date);
+  const year = d.getFullYear();
+  console.log(year);
   // math.floor is used here to return largest integer
   var seconds = Math.floor((new Date() - date) / 1000);
   var interval = Math.floor(seconds / 31536000);
