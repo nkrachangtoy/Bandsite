@@ -25,21 +25,35 @@ const url = "https://project-1-api.herokuapp.com";
 const commentAPI = "comments?api_key=f83633f1-2214-4f06-abaf-f2e6da580294";
 
 /**
- * Get comments array function
+ * GET METHOD WITH AXIOD & API
  */
-function getComments() {
-  axios
-    .get(`${url}/${commentAPI}`)
-    .then((resp) => {
-      // Handle success
-      const data = resp.data;
-      listComments(data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
-getComments();
+axios
+  .get(`${url}/${commentAPI}`)
+  .then((resp) => {
+    // Handle success
+    const data = resp.data;
+    listComments(dateSortArray(data));
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+/**
+ * POST METHOD WITH AXIOD & API
+ */
+axios
+  .post(`${url}/${commentAPI}`, {
+    name: JSON.stringify(nameVal),
+    comment: JSON.stringify(messageVal),
+  })
+  .then((resp) => {
+    // Handle success
+    const data = resp.data;
+    createComment(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // Existing DOM elements //
 const commentForm = document.querySelector(".comment-form"); // html form
@@ -64,8 +78,8 @@ function listComments(comments) {
     nameEl.innerHTML = comments[i].name;
     var dateEl = document.createElement("p");
     dateEl.classList.add("comment-list__item--date"); // add class="comment-list__item--date" to <p>
-    // dateEl.innerHTML = formattedDate(comments[i].date); // with formattedDate function
-    dateEl.innerHTML = comments[i].timestamp;
+    // dateEl.innerHTML = formattedDate(comments[i].timestamp); // with formattedDate function
+    dateEl.innerHTML = timeSince(comments[i].timestamp);
     var messageEl = document.createElement("p");
     messageEl.classList.add("comment-list__item--comment"); // add class="comment-list__item--comment" to <p>
     messageEl.innerHTML = comments[i].comment;
@@ -90,7 +104,7 @@ function createComment(event) {
     comments.push({
       name: nameVal,
       date: dateVal,
-      message: messageVal,
+      comment: messageVal,
     });
     commentForm.reset();
     listComments(dateSortArray(comments));
@@ -101,63 +115,60 @@ function createComment(event) {
 
 function dateSortArray(arr) {
   // using .slice makes a copy of the array, which keeps from sorting the original array
-  var sortedArray = arr.slice().sort((a, b) => b.date - a.date);
+  var sortedArray = arr.slice().sort((a, b) => b.timestamp - a.timestamp);
   return sortedArray;
 }
 
-function formattedDate(date) {
-  const daysInNum = [
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30",
-    "31",
-  ];
-  const monthsInNum = [
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-  ];
-  const formattedDate = `${
-    monthsInNum[date.getMonth()]
-  }/${date.getDate()}/${date.getFullYear()}`;
+// function formattedDate(date) {
+//   const monthsInNum = [
+//     "01",
+//     "02",
+//     "03",
+//     "04",
+//     "05",
+//     "06",
+//     "07",
+//     "08",
+//     "09",
+//     "10",
+//     "11",
+//     "12",
+//   ];
+//   const formattedDate = `${
+//     monthsInNum[date.getMonth()]
+//   }/${date.getDate()}/${date.getFullYear()}`;
 
-  return formattedDate;
+//   return formattedDate;
+// }
+
+/**
+ * function created a timestamp
+ */
+function timeSince(date) {
+  var seconds = Math.floor((new Date() - date) / 1000);
+  var interval = Math.floor(seconds / 31536000);
+  if (interval > 1) {
+    return interval + " years";
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + " months";
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + " days";
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + " hours";
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + " minutes";
+  }
+  return Math.floor(seconds) + " seconds";
+
+  var aDay = 24 * 60 * 60 * 1000;
+  console.log(timeSince(new Date(Date.now() - aDay)));
+  console.log(timeSince(new Date(Date.now() - aDay * 2)));
 }
-
-// listComments(dateSortArray(data)); // call the listComments function
