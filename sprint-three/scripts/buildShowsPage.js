@@ -1,38 +1,49 @@
-var shows = [
-  {
-    date: "Mon Dec 17 2018",
-    venue: "Ronald Lane",
-    location: "San Fancisco, CA",
-  },
-  {
-    date: "Tue Jul 18 2019",
-    venue: "Pier 3 East",
-    location: "San Fancisco, CA",
-  },
-  {
-    date: "Fri Jul 22 2019",
-    venue: "View Loungue",
-    location: "San Fancisco, CA",
-  },
-  {
-    date: "Sat Aug 12 2019",
-    venue: "Hyatt Agency",
-    location: "San Fancisco, CA",
-  },
-  {
-    date: "Fri Sep 05 2019",
-    venue: "Moscow Center",
-    location: "San Fancisco, CA",
-  },
-  {
-    date: "Wed Aug 11 2019",
-    venue: "Pres Club",
-    location: "San Fancisco, CA",
-  },
-];
+// var shows = [
+//   {
+//     date: "Mon Dec 17 2018",
+//     venue: "Ronald Lane",
+//     location: "San Fancisco, CA",
+//   },
+//   {
+//     date: "Tue Jul 18 2019",
+//     venue: "Pier 3 East",
+//     location: "San Fancisco, CA",
+//   },
+//   {
+//     date: "Fri Jul 22 2019",
+//     venue: "View Loungue",
+//     location: "San Fancisco, CA",
+//   },
+//   {
+//     date: "Sat Aug 12 2019",
+//     venue: "Hyatt Agency",
+//     location: "San Fancisco, CA",
+//   },
+//   {
+//     date: "Fri Sep 05 2019",
+//     venue: "Moscow Center",
+//     location: "San Fancisco, CA",
+//   },
+//   {
+//     date: "Wed Aug 11 2019",
+//     venue: "Pres Club",
+//     location: "San Fancisco, CA",
+//   },
+// ];
 
+// VARIABLES //
+const url = "https://project-1-api.herokuapp.com";
+const showDatesAPI = "showdates?api_key=f83633f1-2214-4f06-abaf-f2e6da580294";
+
+// DOM ELEMENTS //
 const showsList = document.querySelector(".shows-list"); // html <ul>
 
+// AXIOS GET SHOW DATES
+axios.get(`${url}/${showDatesAPI}`).then((resp) => {
+  // Handle success
+  const data = resp.data;
+  console.log(data);
+});
 /**
  * Loop through an array of show lists and create <li> that's appended to the <ul class="shows-list">
  */
